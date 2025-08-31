@@ -43,9 +43,9 @@ bot = Client(
     bot_token=BOT_TOKEN
 )
 
-API_ID    = os.environ.get("API_ID", "26421834")
-API_HASH  = os.environ.get("API_HASH", "fe21db9f61ff01300fc1fa3673617983")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "7751947458:AAEcOvQxX1wpKFj7SzjVPNYd6zaHVr3lFW8") 
+API_ID    = os.environ.get("API_ID", "20531922")
+API_HASH  = os.environ.get("API_HASH", "1281c125a3e908948a9a64a58099a2f3")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8447604316:AAEhHep5vFoc9L_hmbl6Nq7yfPOHutXu_q8") 
 
 # Define aiohttp routes
 routes = web.RouteTableDef()
@@ -661,7 +661,7 @@ async def start_command(bot: Client, message: Message):
 
 # Retrieve the cookies file path from the environment variable or set the default path
 COOKIES_FILE_PATH = os.getenv("COOKIES_FILE_PATH", "youtube_cookies.txt")
-ADMIN_ID = 6344648593  # Admin ID for restricting the command
+ADMIN_ID = 5240924887  # Admin ID for restricting the command
 
 @bot.on_message(filters.command("cookies") & filters.private)
 async def cookies_handler(client: Client, m: Message):
@@ -670,7 +670,7 @@ async def cookies_handler(client: Client, m: Message):
     Allows the admin to upload or update the cookies file dynamically.
     """
     # Check if the user is the admin 🛑
-    if m.from_user.id != ADMIN_ID:6344648593
+    if m.from_user.id != ADMIN_ID:5240924887
         await m.reply_text("🚫 You are not authorized to use this command.")
         return
 
@@ -709,7 +709,7 @@ async def cookies_handler(client: Client, m: Message):
 
 # Retrieve the cookies file path from the environment variable or set the default path
 INSTAGRAM_COOKIES_PATH = os.getenv("INSTAGRAM_COOKIES_PATH", "instagram_cookies.txt")
-ADMIN_ID = 6344648593  # Admin ID for restricting the command
+ADMIN_ID = 5240924887  # Admin ID for restricting the command
 
 @bot.on_message(filters.command("instacookies") & filters.private)
 async def instacookies_handler(client: Client, m: Message):
@@ -718,7 +718,7 @@ async def instacookies_handler(client: Client, m: Message):
     Allows the admin to upload or update the Instagram cookies file dynamically.
     """
     # Check if the user is the admin 🛑
-    if m.from_user.id != ADMIN_ID:6344648593
+    if m.from_user.id != ADMIN_ID:5240924887
         await m.reply_text("🚫 You are not authorized to use this command.")
         return
 
@@ -765,7 +765,7 @@ SUBSCRIPTION_FILE = "subscription_data.txt"
 CHANNELS_FILE = "channels_data.json"
 
 # Admin ID
-ADMIN_ID = 6344648593
+ADMIN_ID = 5240924887
 
 # Function to read subscription data
 def read_subscription_data():
@@ -812,7 +812,7 @@ def write_channels_data(data):
 # Admin-only decorator
 def admin_only(func):
     async def wrapper(client, message: Message):
-        if message.from_user.id != ADMIN_ID:6344648593
+        if message.from_user.id != ADMIN_ID:5240924887
             await message.reply_text("❌ You are not authorized to use this command. Please contact the admin.")
             return
         await func(client, message)
@@ -890,7 +890,7 @@ async def my_plan(client, message: Message):
     user_id = str(message.from_user.id)
     subscription_data = read_subscription_data()
 
-    if user_id == str(ADMIN_ID):6344648593
+    if user_id == str(ADMIN_ID):5240924887
         await message.reply_text("✨ **You have permanent access!**\nYou are the admin. 💎")
     elif any(user[0] == user_id for user in subscription_data):
         expiration_date = next(user[1] for user in subscription_data if user[0] == user_id)
@@ -903,11 +903,11 @@ async def my_plan(client, message: Message):
     else:
         await message.reply_text("❌ **You are not a premium user.**\nPlease upgrade your plan. 💳")
 
-ADMIN_ID = 6344648593
+ADMIN_ID = 5240924887
 
 # Helper function to check admin privilege
 def is_admin(user_id):
-    return user_id == ADMIN_ID = 6344648593
+    return user_id == ADMIN_ID = 5240924887
 
 # Command to show all users (Admin only)
 @bot.on_message(filters.command("users") & filters.private)
@@ -1019,7 +1019,7 @@ async def allowed_channels(client, message: Message):
 async def remove_all_channels(client, message: Message):
     user_id = message.from_user.id
 
-    if user_id != ADMIN_ID:6344648593
+    if user_id != ADMIN_ID:5240924887
         await message.reply_text("❌ **You are not authorized to use this command.**")
         return
 
